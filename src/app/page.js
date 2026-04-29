@@ -1,11 +1,12 @@
 import Banner from "@/components/Banner";
-import { Button } from "@heroui/react";
+import TopGenerations from "@/components/TopGenerations";
 
 
 export default function Home() {
   return (
     <div >
   <Banner></Banner>
+  <TopGenerations></TopGenerations>
     </div>
   );
 }

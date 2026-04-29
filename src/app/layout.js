@@ -24,9 +24,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body >
+      <body className="space-y-5">
       <Navbar></Navbar>
+      <main className="container mx-auto">
       {children}
+      </main>
       <Footer></Footer></body>
     </html>
   );
