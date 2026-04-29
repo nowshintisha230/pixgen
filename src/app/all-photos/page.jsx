@@ -2,11 +2,16 @@ import { Button, Card, Chip, Separator } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 import { FaHeartCircleExclamation,FaDownload } from "react-icons/fa6";
-const Photocard = ({photo}) => {
-    console.log(photo)
+const AllPhotos = async() => {
+     const res = await fetch ('https://pixgen-murex.vercel.app/data.json')
+    const photos= await res.json()
+    console.log(photos)
     return (
         <div>
-        <Card className='border rounded-xl'>
+            <h1 className='font-bold text-center m-5 text-5xl'>All Photos</h1>
+        <div className='grid grid-cols-1 lg:grid-cols-4 gap-5'>
+    {photos.map(photo =>
+        <Card className='border rounded-xl' key={photo.id}>
         
    <div className='relative w-full aspect-square'>
           <Image src={photo.imageUrl} alt="" fill className='object-cover rounded-xl'/>
@@ -25,9 +30,10 @@ const Photocard = ({photo}) => {
            </div>
            <Chip className='absolute right-2 top-2 font-thin'>{photo.category}</Chip>
            <Button className="w-full">View Details</Button>
-          </Card>
+          </Card>)}
+        </div>
         </div>
     );
 };
 
-export default Photocard;
+export default AllPhotos;
