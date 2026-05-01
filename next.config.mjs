@@ -6,7 +6,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'i.pinimg.com',
-        pathname: '/**', // 🔥 IMPORTANT
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pixgen-murex.vercel.app', 
+        pathname: '/**',
       },
     ],
   },
